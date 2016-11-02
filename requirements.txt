@@ -1,1 +1,8 @@
+conda==4.1.11
+conda-env==2.5.0a0
 Django==1.10.3
+pycosat==0.6.1
+pycrypto==2.6.1
+PyYAML==3.11
+requests==2.10.0
+ruamel-yaml===-VERSION
