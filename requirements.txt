@@ -1,4 +1,4 @@
-conda==4.1.11
+conda==4.2.7
 conda-env==2.5.0a0
 Django==1.10.3
 pycosat==0.6.1
