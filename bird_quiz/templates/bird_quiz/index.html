@@ -1,0 +1,34 @@
+{%  if img_url %}
+    <img src={{ img_url }}>
+{% else %}
+    <p>No birds are available</p>
+{% endif %}
+
+<h1>What bird?</h1>
+
+<form action="">
+    <input type="radio" name="choice" id="choice0"> {{ choices.0 }}<br>
+    <input type="radio" name="choice" id="choice1"> {{ choices.1 }}<br>
+    <input type="radio" name="choice" id="choice2"> {{ choices.2 }}<br>
+    <input type="radio" name="choice" id="choice3"> {{ choices.3 }}<br>
+    <input type="radio" name="choice" id="choice4"> {{ choices.4 }}<br>
+
+</form>
+
+<div id = "status"> status = unanswered </div>
+<button onclick="checkAnswer()">Check Answer</button>
+<a href="/quiz">Give me another bird!</a>
+
+<script>
+    function checkAnswer() {
+        if(document.getElementById("choice" + {{ correct_index }}).checked) {
+            document.getElementById("status").innerHTML = "Correct!"
+        }
+        else {
+            document.getElementById("status").innerHTML = "Wrong!"
+        }
+    }
+</script>
+
+
+<a href = "/admin/bird_quiz/bird/add">Add Birds!</a>
