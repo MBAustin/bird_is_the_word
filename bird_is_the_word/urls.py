@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+import bird_quiz
 
 urlpatterns = [
+    url(r'^$', include('bird_quiz.urls')),
     url(r'^quiz/', include('bird_quiz.urls')),
     url(r'^admin/', admin.site.urls),
 ]
