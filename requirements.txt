@@ -1,4 +1,4 @@
-
+gunicorn==19.6.0
 Django==1.10.3
 pycosat==0.6.1
 pycrypto==2.6.1
