@@ -1,12 +1,9 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 
-from .models import Bird
+from .models import Bird, Group
 
 import json, http.client, urllib.request, urllib.parse, urllib.error, base64, random
-
-
-
 
 
 def index(request):
@@ -14,6 +11,8 @@ def index(request):
         # Request headers
         'Ocp-Apim-Subscription-Key': '52e1f43aa3114e8b924af3f84693877b',
     }
+
+
 
     result_id = random.randrange(10)
     random_index = 0#random.randint(0, Bird.objects.count() - 1)
@@ -32,10 +31,9 @@ def index(request):
                 choices.append(Bird.objects.all()[check_index].common_name)
 
 
-    print(len(choices))
     choices.insert(correct_index, correct_bird)
-    print(len(choices))
 
+    bird_groups = [g.name for g in Group.objects.filter()]
 
     params = urllib.parse.urlencode({
         # Request parameters
@@ -61,6 +59,7 @@ def index(request):
         print("[Errno {0}] {1}".format(e.errno, e.strerror))
 
     context = {
+        'bird_groups' : bird_groups,
         'choices' : choices,
         'correct_index' : correct_index,
         'img_url' : img_url,

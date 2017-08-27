@@ -17,6 +17,11 @@
 
 <div id = "status"> status = unanswered </div>
 <button onclick="checkAnswer()">Check Answer</button>
+<select>
+    {% for g in bird_groups %}
+        <option value="{{ g.name }}">{{ g.name }}</option>
+    {% endfor %}
+</select>
 <a href="/quiz">Give me another bird!</a>
 
 <script>

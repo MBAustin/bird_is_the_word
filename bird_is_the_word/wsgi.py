@@ -1,16 +1,14 @@
 """
-WSGI config for bird_is_the_word project.
-
+WSGI config for {{ project_name }} project.
 It exposes the WSGI callable as a module-level variable named ``application``.
-
 For more information on this file, see
-https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
+https://docs.djangoproject.com/en/1.9/howto/deployment/wsgi/
 """
 
 import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bird_is_the_word.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings")
 
 application = get_wsgi_application()
